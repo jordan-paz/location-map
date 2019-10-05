@@ -7,7 +7,7 @@ export const MainGrid = styled.div`
     "map"
     "list";
   @media (min-width: 600px) {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-areas:
       "search map"
       "list map";
@@ -18,7 +18,6 @@ export const MapSection = styled.section`
   grid-area: map;
   width: 100%;
   height: 100%;
-  background-color: red;
 `;
 
 export const ListSection = styled.section`
