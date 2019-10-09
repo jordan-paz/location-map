@@ -1,9 +1,14 @@
 import React from "react";
 import Layout from "./components/Layout";
 
+import Map from "./components/Map";
+import Search from "./components/Search";
+import LocationList from "./components/LocationList";
+
 export default () => (
-  <div>
-    <h1>Locator</h1>
-    <Layout />
-  </div>
+  <Layout>
+    <LocationList />
+    <Map />
+    <Search />
+  </Layout>
 );

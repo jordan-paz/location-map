@@ -2,29 +2,18 @@ import styled from "styled-components";
 
 export const MainGrid = styled.div`
   display: grid;
+  padding: 10px;
+  grid-row-gap: 15px;
   grid-template-areas:
     "search"
     "map"
     "list";
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
+    height: 90vh;
     grid-template-columns: 1fr 2fr;
+    grid-template-rows: 20% 80%;
     grid-template-areas:
       "search map"
       "list map";
   }
-`;
-
-export const MapSection = styled.section`
-  grid-area: map;
-  width: 100%;
-  height: 100%;
-`;
-
-export const ListSection = styled.section`
-  grid-area: list;
-  background-color: blue;
-`;
-export const SearchSection = styled.section`
-  grid-area: search;
-  background-color: purple;
 `;
