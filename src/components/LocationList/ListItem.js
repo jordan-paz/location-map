@@ -1,16 +1,19 @@
 import React from "react";
+import { Card, CardDetails, CardTitle } from "./styles";
 
-export default ({ locationDetails }) => {
-  const { name, url, address, phone } = locationDetails;
+export default ({ customer }) => {
+  const { name, nickname, website, address, phone } = customer;
 
   return (
-    <li>
-      <h3>{name}</h3>
-      <ul>
-        <li>{url}</li>
+    <Card>
+      <CardTitle>{nickname ? nickname : name}</CardTitle>
+      <CardDetails>
+        <li>
+          <a url={website}>Website</a>
+        </li>
         <li>{address}</li>
         <li>{phone}</li>
-      </ul>
-    </li>
+      </CardDetails>
+    </Card>
   );
 };

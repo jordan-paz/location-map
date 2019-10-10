@@ -5,6 +5,6 @@ export const MapSection = styled.section`
   height: 65vh;
   width: 100%;
   @media (min-width: 700px) {
-    height: 90vh;
+    height: 100%;
   }
 `;

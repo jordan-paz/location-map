@@ -1,32 +1,14 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import ListItem from "./ListItem";
 import { ListSection, List } from "./styles";
 
-export default () => {
-  const [customers, setCustomers] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const getCustomers = async () => {
-      const response = await axios.get("http://localhost:9000");
-      setCustomers(response.data);
-    };
-    getCustomers();
-    setLoading(false);
-  }, []);
-
+export default ({ customers }) => {
   return (
     <ListSection>
       <List>
-        {!loading &&
-          customers.map(customer => (
-            <ListItem
-              name={customer.name}
-              phone={customer.phone}
-              key={customer.name}
-            />
-          ))}
+        {customers.map(customer => (
+          <ListItem customer={customer} key={customer.id} />
+        ))}
       </List>
     </ListSection>
   );
