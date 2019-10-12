@@ -1,9 +1,10 @@
 import React from "react";
+import { StyledHeader } from "./styles";
 
 export default () => {
   return (
-    <header>
+    <StyledHeader>
       <h1>Space Monkey</h1>
-    </header>
+    </StyledHeader>
   );
 };

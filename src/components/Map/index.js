@@ -1,5 +1,5 @@
 import React from "react";
-import { MapSection } from "./styles";
+import { MapSection, MarkerWrapper } from "./styles";
 
 import { FaMapMarkerAlt } from "react-icons/fa";
 
@@ -7,7 +7,9 @@ import GoogleMapReact from "google-map-react";
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const Marker = ({ location }) => (
-  <FaMapMarkerAlt size={30} onClick={() => alert(location.name)} />
+  <MarkerWrapper>
+    <FaMapMarkerAlt size={30} onClick={() => alert(location.name)} />
+  </MarkerWrapper>
 );
 
 export default ({ locations }) => {

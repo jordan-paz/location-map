@@ -8,3 +8,9 @@ export const MapSection = styled.section`
     height: 100%;
   }
 `;
+
+export const MarkerWrapper = styled.span`
+  :hover {
+    cursor: pointer;
+  }
+`;

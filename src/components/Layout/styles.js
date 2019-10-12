@@ -11,11 +11,12 @@ export const MainGrid = styled.div`
     "map"
     "list";
   @media (min-width: 700px) {
-    height: 90vh;
+    padding: 30px;
+    height: 70vh;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 10% 90%;
     grid-template-areas:
-      "search map"
+      "search search"
       "list map";
   }
 `;
