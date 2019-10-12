@@ -2,12 +2,13 @@ import React from "react";
 import ListItem from "./ListItem";
 import { ListSection, List } from "./styles";
 
-export default ({ customers }) => {
+export default ({ locations }) => {
+  console.log(locations);
   return (
     <ListSection>
       <List>
-        {customers.map(customer => (
-          <ListItem customer={customer} key={customer.id} />
+        {locations.map(location => (
+          <ListItem location={location} key={location.id} />
         ))}
       </List>
     </ListSection>

@@ -6,9 +6,11 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import GoogleMapReact from "google-map-react";
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
-const Marker = () => <FaMapMarkerAlt size={30} />;
+const Marker = ({ location }) => (
+  <FaMapMarkerAlt size={30} onClick={() => alert(location.name)} />
+);
 
-export default ({ customers }) => {
+export default ({ locations }) => {
   return (
     <MapSection>
       <GoogleMapReact
@@ -19,8 +21,8 @@ export default ({ customers }) => {
         }}
         defaultZoom={6}
       >
-        {customers.map(customer => (
-          <Marker lat={customer.lat} lng={customer.long} />
+        {locations.map(location => (
+          <Marker location={location} lat={location.lat} lng={location.long} />
         ))}
       </GoogleMapReact>
     </MapSection>

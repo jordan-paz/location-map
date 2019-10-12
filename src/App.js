@@ -5,22 +5,18 @@ import Layout from "./components/Layout";
 import Map from "./components/Map";
 import Search from "./components/Search";
 import LocationList from "./components/LocationList";
+import { observer } from "mobx-react";
 
-export default () => {
-  const [customers, setCustomers] = useState([]);
-
+export default observer(({ locationStore }) => {
   useEffect(() => {
-    const getCustomers = async () => {
-      const response = await axios.get("http://localhost:9000");
-      setCustomers(response.data);
-    };
-    getCustomers();
+    locationStore.getLocations();
   }, []);
+
   return (
     <Layout>
-      <LocationList customers={customers} />
-      <Map customers={customers} />
+      <LocationList locations={locationStore.locations} />
+      <Map locations={locationStore.locations} />
       <Search />
     </Layout>
   );
-};
+});

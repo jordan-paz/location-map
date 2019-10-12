@@ -1,13 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "mobx-react";
-import LocationStore from "./locationStore";
 import "./index.css";
 import App from "./App";
+import LocationStore from "./locationStore";
 
 ReactDOM.render(
-  <Provider locationStore={new LocationStore()}>
-    <App />
-  </Provider>,
+  <App locationStore={new LocationStore()} />,
   document.getElementById("root")
 );

@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, CardDetails, CardTitle } from "./styles";
 
-export default ({ customer }) => {
-  const { name, nickname, website, address, phone } = customer;
+export default ({ location }) => {
+  const { name, nickname, website, address, phone } = location;
 
   return (
     <Card>
