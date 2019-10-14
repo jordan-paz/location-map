@@ -15,7 +15,10 @@ export default observer(({ locationStore }) => {
   return (
     <Layout>
       <LocationList locations={locationStore.locations} />
-      <Map locations={locationStore.locations} />
+      <Map
+        locations={locationStore.locations}
+        selectLocation={locationStore.selectLocation}
+      />
       <Search />
     </Layout>
   );

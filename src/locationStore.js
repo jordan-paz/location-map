@@ -6,15 +6,13 @@ class Store {
   @observable selectedLocation = null;
 
   @action
+  selectLocation = location => (this.selectedLocation = location);
+
+  @action
   getLocations = async () => {
     const response = await axios.get("http://localhost:9000");
     console.log(response);
     this.locations = response.data;
-  };
-
-  @action
-  selectLocation = index => {
-    this.selectedLocation = this.locations[index];
   };
 }
 export default Store;
