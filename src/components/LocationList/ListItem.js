@@ -9,7 +9,7 @@ export default ({ location }) => {
       <CardTitle>{nickname ? nickname : name}</CardTitle>
       <CardDetails>
         <li>
-          <a url={website}>Website</a>
+          <a href={website}>Website</a>
         </li>
         <li>{address}</li>
         <li>{phone}</li>

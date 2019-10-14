@@ -5,7 +5,7 @@ import Marker from "./Marker";
 import GoogleMapReact from "google-map-react";
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
-export default ({ locations }) => {
+export default ({ locations, selectedLocation, selectLocation }) => {
   return (
     <MapSection>
       <GoogleMapReact
@@ -17,7 +17,13 @@ export default ({ locations }) => {
         defaultZoom={6}
       >
         {locations.map(location => (
-          <Marker location={location} lat={location.lat} lng={location.long} />
+          <Marker
+            location={location}
+            lat={location.lat}
+            lng={location.long}
+            selectedLocation={selectedLocation}
+            selectLocation={selectLocation}
+          />
         ))}
       </GoogleMapReact>
     </MapSection>

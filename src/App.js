@@ -17,6 +17,7 @@ export default observer(({ locationStore }) => {
       <LocationList locations={locationStore.locations} />
       <Map
         locations={locationStore.locations}
+        selectedLocation={locationStore.selectedLocation}
         selectLocation={locationStore.selectLocation}
       />
       <Search />

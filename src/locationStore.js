@@ -6,7 +6,9 @@ class Store {
   @observable selectedLocation = null;
 
   @action
-  selectLocation = location => (this.selectedLocation = location);
+  selectLocation = location => {
+    this.selectedLocation = location;
+  };
 
   @action
   getLocations = async () => {
