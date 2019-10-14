@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 
 import Layout from "./components/Layout";
 import Map from "./components/Map";

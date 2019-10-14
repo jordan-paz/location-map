@@ -26,6 +26,7 @@ export const List = styled.ul`
 export const Card = styled.li`
   padding: 10px;
   border: 1px solid black;
+  border-radius: 2px;
   margin: 10px;
   width: 80%;
   height: 120px;

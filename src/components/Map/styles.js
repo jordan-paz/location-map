@@ -18,10 +18,12 @@ export const MarkerWrapper = styled.span`
 export const Modal = styled.div`
   padding: 10px;
   border: 1px solid black;
+  border-radius: 2px;
   margin: 10px;
   width: 200px;
   height: 100px;
   background-color: white;
+  flex-direction: column;
   display: ${props => (props.show ? "flex" : "none")};
 `;
 

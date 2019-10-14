@@ -4,7 +4,7 @@ import Location from "./Location";
 
 export default ({ locations, selectedLocation, selectLocation }) => {
   return (
-    <GoogleMap>
+    <GoogleMap selectLocation={selectLocation}>
       {locations.map(location => (
         <Location
           location={location}

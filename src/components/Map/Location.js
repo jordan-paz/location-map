@@ -5,7 +5,12 @@ import DetailModal from "./DetailModal";
 export default ({ location, selectLocation, showModal }) => {
   return (
     <>
-      <Marker onClick={() => selectLocation(location)} />
+      <Marker
+        onClick={e => {
+          e.stopPropagation();
+          selectLocation(location);
+        }}
+      />
       <DetailModal location={location} show={showModal} />
     </>
   );
