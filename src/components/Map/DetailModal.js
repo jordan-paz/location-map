@@ -3,7 +3,6 @@ import { Modal, ModalDetails, ModalTitle } from "./styles";
 
 export default ({ location, show }) => {
   const { name, nickname, website, address, phone } = location;
-
   return (
     <Modal show={show}>
       <ModalTitle>{nickname ? nickname : name}</ModalTitle>

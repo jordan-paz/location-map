@@ -1,31 +1,24 @@
 import React from "react";
-import { MapSection } from "./styles";
-import Marker from "./Marker";
-
-import GoogleMapReact from "google-map-react";
-const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+import GoogleMap from "./GoogleMap";
+import Location from "./Location";
 
 export default ({ locations, selectedLocation, selectLocation }) => {
   return (
-    <MapSection>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: API_KEY }}
-        defaultCenter={{
-          lat: 36.7783,
-          lng: -119.4179
-        }}
-        defaultZoom={6}
-      >
-        {locations.map(location => (
-          <Marker
-            location={location}
-            lat={location.lat}
-            lng={location.long}
-            selectedLocation={selectedLocation}
-            selectLocation={selectLocation}
-          />
-        ))}
-      </GoogleMapReact>
-    </MapSection>
+    <GoogleMap>
+      {locations.map(location => (
+        <Location
+          location={location}
+          lat={location.lat}
+          lng={location.long}
+          showModal={
+            selectedLocation && selectedLocation.id === location.id
+              ? true
+              : false
+          }
+          selectedLocation={selectedLocation}
+          selectLocation={selectLocation}
+        />
+      ))}
+    </GoogleMap>
   );
 };
